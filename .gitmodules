@@ -1,0 +1,6 @@
+[submodule "external/tmux-powerline"]
+	path = external/tmux-powerline
+	url = git@github.com:AppleDash/tmux-powerline.git
+[submodule "external/prezto"]
+	path = external/prezto
+	url = git@github.com:AppleDash/prezto.git
