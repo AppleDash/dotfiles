@@ -10,4 +10,4 @@ ponyhosts=(
 typeset -r ponyhosts
 hostname=${$(hostname)%%.*}
 # PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"${ponyhosts[$hostname]:-$hostname}%f:%. %n%# "
-PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"[%n@${ponyhosts[$hostname]:-$hostname}%f:%1~]$ "
+PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"[%n@${ponyhosts[$hostname]:-$hostname}%f %1~]$ "
