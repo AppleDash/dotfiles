@@ -1,0 +1,13 @@
+[user]
+	email = derp@derpy.fr
+	name = AppleDash
+[push]
+	default = matching
+
+[core]
+	autocrlf = input
+
+[alias]
+	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+        s = status
+
