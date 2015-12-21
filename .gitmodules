@@ -8,3 +8,6 @@
 	path = dotfiles/vim/bundle/Vundle.vim
         url = https://github.com/VundleVim/Vundle.vim.git
 
+[submodule "dotfiles/vim/bundle/YouCompleteMe"]
+	path = dotfiles/vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
