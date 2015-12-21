@@ -9,46 +9,34 @@ unset TMPDIR
 
 alias ls='ls --color=auto'
 alias pfresh='mplayer http://livestream.freshfm.com.au:8004/'
-alias autism='mplayer http://radio.autistic-faggots.net/radio.ogg'
 alias grep='grep --color=auto'
+
 sublime() {
 	subl $@ > /dev/null 2>&1 &!
 }
-# alias sublime='/home/appledash/bin/Sublime\ Text\ 2/sublime_text'
-alias mc='java -jar ~/Downloads/Minecraft.jar > /dev/null 2>&1 &!'
-if [ $SHELL == "/bin/bash" ]
-then
-	PS1='[\u@\h \W]\$ '
-fi
+
 if [ "$TMUX" != "" ]; then
 	export TERM=screen-256color
 else
 	export TERM=xterm-256color
 fi
+
 export LANG=en_US.UTF-8
+
+# I don't know why my mouse speed is set in my bashrc.
 if [ "$DISPLAY" != "" ]; then
     xset m 1/16
 fi
-RUBY_BIN=/home/appledash/.gem/ruby/2.2.0/bin/
+
+RUBY_BIN=$HOME/.gem/ruby/2.2.0/bin/
 export PATH=$PATH:$RUBY_BIN
-export PATH="$PATH:/home/appledash/bin/:/usr/lib/passenger/bin"
+export PATH="$PATH:$HOME/bin/:/usr/lib/passenger/bin"
 export GEM_HOME=~/.gem/ruby/2.0.0/ bundle
 alias loldongs="yes loldongs | lolcat"
-alias md5="python2 /home/appledash/bin/md5.py"
-alias cunt,="sudo"
-alias fuck='mplayer http://sparkle.yolo-swag.com:8000/stream.ogg'
-alias intellij='bash ~/bin/idea-IU-133.193/bin/idea.sh > /dev/null 2>&1 &!'
-alias weechat-splitnet='weechat --dir ~/.weechat2/'
-alias tekkit="java -jar ~/Downloads/TechnicLauncher.jar > /dev/null 2>&1 &!"
-alias teamviewer7="~/Desktop/Stuff/teamviewer7/teamviewer > /dev/null 2>&1 &!"
-alias teamviewer9="~/Desktop/Stuff/teamviewer9/teamviewer > /dev/null 2>&1 &!"
 alias winbox='wine ~/Downloads/winbox.exe >/dev/null 2>&1 &!'
-alias ftb='java -jar ~/Downloads/launcher\^FTB_Launcher\ \(1\).jar >/dev/null 2>&1 &!'
-alias teamviewer10="~/Downloads/teamviewer10/teamviewer > /dev/null 2>&1 &!"
 source ~/.shellfuncs/*.sh
 alias tgit="http_proxy=socks5://127.0.0.1:9050 git"
 export GOPATH="$HOME/projects/go"
-#export PATH="$PATH:$GOPATH/bin
 alias fuck='$(thefuck $(fc -ln -1))'
 export JAVA_HOME="/usr/lib/jvm/default"
 export MAKEFLAGS="-j10"
