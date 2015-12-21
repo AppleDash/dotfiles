@@ -18,5 +18,9 @@ make_link() {
     echo "Made link: $link -> $targ"
 }
 
-df_base_dir="$(dirname $(dirname $0))"
+pushd $(dirname $(dirname $0)) > /dev/null
+SCRIPTPATH=`pwd`
+popd > /dev/null
+
+df_base_dir="$SCRIPTPATH"
 
