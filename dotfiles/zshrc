@@ -16,8 +16,8 @@ emulate sh
 source ~/.bashrc
 emulate zsh
 
-if [ -f "$HOME/.zsh/hosts/$(hostname).zsh" ]; then
-    source "$HOST/.zsh/hosts/$(hostname).zsh"
+if [[ -f "$HOME/.zsh/hosts/$(hostname).zsh" ]]; then
+    source "$HOME/.zsh/hosts/$(hostname).zsh"
 fi
 
 #prompt redhat

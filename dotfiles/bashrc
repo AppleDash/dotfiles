@@ -5,21 +5,43 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-unset TMPDIR
+# Set up make flags
+ncpus="$(nproc)"
+makejobs=""
 
-alias ls='ls --color=auto'
+# Special case for my desktop
+if [ "$ncpus" == "12" ]; then 
+    makejobs="10"
+else
+    makejobs="$ncpus"
+fi
+
+export MAKEFLAGS="-j$makejobs"
+
+# End setting up make flags
+
+# Set up useful aliases
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+# Random stuff I sometimes use
 alias pfresh='mplayer http://livestream.freshfm.com.au:8004/'
-alias grep='grep --color=auto'
 
-sublime() {
-	subl $@ > /dev/null 2>&1 &!
+# While not technically an alias, this is effectively one.
+sublime() {  
+        subl $@ > /dev/null 2>&1 &!
 }
 
+# End setting up aliases
+
+unset TMPDIR
+
+# Ensure my terminal vars are correctly setup
 if [ "$TMUX" != "" ]; then
 	export TERM=screen-256color
 else
 	export TERM=xterm-256color
 fi
+# End setup of terminal vars
 
 export LANG=en_US.UTF-8
 
@@ -39,12 +61,14 @@ alias tgit="http_proxy=socks5://127.0.0.1:9050 git"
 export GOPATH="$HOME/projects/go"
 alias fuck='$(thefuck $(fc -ln -1))'
 export JAVA_HOME="/usr/lib/jvm/default"
-export MAKEFLAGS="-j10"
 export EDITOR=vim
 export VISUAL=vim
+
+# On my desktop, IntelliJ products only work under `strace` due to a buggy JVM.
 alias pycharm-strace="strace -f -e trace=open pycharm >/dev/null 2>&1 &!"
 alias intellij-strace="strace -f -e trace=open intellij-idea-ultimate-edition >/dev/null 2>&1 &!"
 
+# SSH agent stuff
 if ! pgrep -u $USER ssh-agent > /dev/null; then
     ssh-agent | grep -v echo > ~/.ssh-agent-thing
 fi
