@@ -15,6 +15,11 @@ fi
 emulate sh
 source ~/.bashrc
 emulate zsh
+
+if [ -f "$HOME/.zsh/hosts/$(hostname).zsh" ]; then
+    source "$HOST/.zsh/hosts/$(hostname).zsh"
+fi
+
 #prompt redhat
 PROMPT="[%n@%m %1~]$ "
 export HISTFILE=$HOME/.zhistory

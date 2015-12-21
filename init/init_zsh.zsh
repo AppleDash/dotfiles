@@ -8,6 +8,8 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 rm $HOME/.zshrc
+
+make_link $df_base_dir/dotfiles/zsh $HOME/.zsh
 make_link $df_base_dir/dotfiles/zshrc $HOME/.zshrc
 make_link $df_base_dir/dotfiles/bashrc $HOME/.bashrc
 
