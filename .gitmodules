@@ -4,3 +4,6 @@
 [submodule "external/prezto"]
 	path = external/prezto
 	url = git@github.com:AppleDash/prezto.git
+[submodule "dotfiles/vim/bundle/Vundle.vim"]
+	path = dotfiles/vim/bundle/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git
