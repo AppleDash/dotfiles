@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -23,50 +19,40 @@ export MAKEFLAGS="-j$makejobs"
 # Set up useful aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+
 # Random stuff I sometimes use
 alias pfresh='mplayer http://livestream.freshfm.com.au:8004/'
-
-# While not technically an alias, this is effectively one.
-sublime() {  
-        subl $@ > /dev/null 2>&1 &!
-}
+alias tgit="http_proxy=socks5://127.0.0.1:9050 git"
+alias fuck='$(thefuck $(fc -ln -1))'
+alias loldongs="yes loldongs | lolcat"
+alias winbox='wine ~/Downloads/winbox.exe >/dev/null 2>&1 &!'
 
 # End setting up aliases
 
-unset TMPDIR
-
-# Ensure my terminal vars are correctly setup
+# Set up useful environment variables
 if [ "$TMUX" != "" ]; then
 	export TERM=screen-256color
 else
 	export TERM=xterm-256color
 fi
-# End setup of terminal vars
 
+unset TMPDIR
 export LANG=en_US.UTF-8
+RUBY_BIN=$HOME/.gem/ruby/2.2.0/bin/
+export PATH=$PATH:$RUBY_BIN
+export PATH="$PATH:$HOME/bin/:/usr/lib/passenger/bin"
+export GEM_HOME=~/.gem/ruby/2.0.0/ bundle
+export GOPATH="$HOME/projects/go"
+export JAVA_HOME="/usr/lib/jvm/default"
+export EDITOR=vim
+export VISUAL=vim
+
+# End setup of environment variables
 
 # I don't know why my mouse speed is set in my bashrc.
 if [ "$DISPLAY" != "" ]; then
     xset m 1/16
 fi
-
-RUBY_BIN=$HOME/.gem/ruby/2.2.0/bin/
-export PATH=$PATH:$RUBY_BIN
-export PATH="$PATH:$HOME/bin/:/usr/lib/passenger/bin"
-export GEM_HOME=~/.gem/ruby/2.0.0/ bundle
-alias loldongs="yes loldongs | lolcat"
-alias winbox='wine ~/Downloads/winbox.exe >/dev/null 2>&1 &!'
-source ~/.shellfuncs/*.sh
-alias tgit="http_proxy=socks5://127.0.0.1:9050 git"
-export GOPATH="$HOME/projects/go"
-alias fuck='$(thefuck $(fc -ln -1))'
-export JAVA_HOME="/usr/lib/jvm/default"
-export EDITOR=vim
-export VISUAL=vim
-
-# On my desktop, IntelliJ products only work under `strace` due to a buggy JVM.
-alias pycharm-strace="strace -f -e trace=open pycharm >/dev/null 2>&1 &!"
-alias intellij-strace="strace -f -e trace=open intellij-idea-ultimate-edition >/dev/null 2>&1 &!"
 
 # SSH agent stuff
 if ! pgrep -u $USER ssh-agent > /dev/null; then
@@ -75,5 +61,7 @@ fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval $(<~/.ssh-agent-thing)
 fi
+
 ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add ~/.ssh/identities/* && unalias ssh; ssh'
 
+# End SSH agent stuff
