@@ -21,7 +21,8 @@ if [[ -f "$HOME/.zsh/hosts/$(hostname).zsh" ]]; then
 fi
 
 #prompt redhat
-PROMPT="[%n@%m %1~]$ "
+#PROMPT="[%n@%m %1~]$ "
+source $HOME/.zsh/ponyhosts.zsh
 export HISTFILE=$HOME/.zhistory
 export SAVEHIST=999999999
 export HISTSIZE=$SAVEHIST
