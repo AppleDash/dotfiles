@@ -9,5 +9,9 @@ ponyhosts=(
 
 typeset -r ponyhosts
 hostname=${$(hostname)%%.*}
+namecolor=""
+if [[ "$USER" == "root" ]]; then
+    namecolor="%F{009}"
+fi
 # PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"${ponyhosts[$hostname]:-$hostname}%f:%. %n%# "
-PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"[%n@${ponyhosts[$hostname]:-$hostname}%f %1~]$ "
+PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"[$namecolor%n%f@${ponyhosts[$hostname]:-$hostname}%f %1~]$ "
