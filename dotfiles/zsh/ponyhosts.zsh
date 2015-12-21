@@ -12,6 +12,8 @@ hostname=${$(hostname)%%.*}
 namecolor=""
 if [[ "$USER" == "root" ]]; then
     namecolor="%F{009}"
+elif [[ "$USER" == "appledash" ]]; then
+    namecolor="%F{135}"
 fi
 # PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"${ponyhosts[$hostname]:-$hostname}%f:%. %n%# "
 PROMPT="%(?.%F{green}.%F{red})[%?] %F{yellow}[%l] %F{magenta}[%/]%f"$'\n'"[$namecolor%n%f@${ponyhosts[$hostname]:-$hostname}%f %1~]$ "
