@@ -1,0 +1,5 @@
+# Yaourt Configuration File
+# Sun Jan  2 21:04:01 IST 2011
+NOCONFIRM=1
+EDITFILES=0
+USECOLOR=1
