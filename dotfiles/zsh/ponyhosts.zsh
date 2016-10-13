@@ -9,7 +9,6 @@ ponyhosts=(
     ponies   "%F{039}ponies"
     )
 
-typeset -r ponyhosts
 hostname=${$(hostname)%%.*}
 namecolor=""
 if [[ "$USER" == "root" ]]; then
