@@ -1,8 +1,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+uname="$(uname)"
+
 # Set up make flags
-ncpus="$(nproc)"
+
+if [ "$uname" = "FreeBSD" ]; then
+    ncpus="$(sysctl -a | egrep -i 'hw.ncpu')"
+else
+    ncpus="$(nproc)"
+fi
+
 makejobs=""
 
 # Special case for my desktop
@@ -17,9 +25,13 @@ export MAKEFLAGS="-j$makejobs"
 # End setting up make flags
 
 # Set up useful aliases
-alias ls="ls --color=auto"
+if [ "$uname" = "FreeBSD" ]; then
+    alias ls="ls -G"
+else
+    alias ls="ls --color=auto"
+fi
 alias grep="grep --color=auto"
-alias rm="rm --verbose"
+alias rm="rm -v"
 
 # Random stuff I sometimes use
 alias pfresh='mplayer http://livestream.freshfm.com.au:8004/'
