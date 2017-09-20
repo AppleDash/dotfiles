@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 make_link() {
     targ="$1"
     link="$2"
