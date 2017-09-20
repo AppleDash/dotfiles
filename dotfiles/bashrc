@@ -52,16 +52,25 @@ else
 fi
 
 unset TMPDIR
+
 export LANG=en_US.UTF-8
-RUBY_BIN="$(find ~/.gem/ruby/ -maxdepth 1 -mindepth 1 -type d | head -n1 | tr -d '\n')"/bin
-export PATH=$PATH:$RUBY_BIN
+
+# Ruby gem binaries
+if [ -d "~/.gem/ruby" ]; then
+    RUBY_BIN="$(find ~/.gem/ruby/ -maxdepth 1 -mindepth 1 -type d | head -n1 | tr -d '\n')"/bin
+    export PATH=$PATH:$RUBY_BIN
+fi
+
+# Java path
+if [ -d "/usr/lib/jvm/default" ]; then
+    export JAVA_HOME="/usr/lib/jvm/default"
+fi
+
 export PATH="$PATH:$HOME/bin/:/usr/lib/passenger/bin"
-export GEM_HOME=~/.gem/ruby/2.0.0/ bundle
 export GOPATH="$HOME/projects/go"
-export JAVA_HOME="/usr/lib/jvm/default"
+
 export EDITOR=vim
 export VISUAL=vim
-
 # End setup of environment variables
 
 # I don't know why my mouse speed is set in my bashrc.
