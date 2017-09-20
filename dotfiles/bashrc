@@ -34,12 +34,14 @@ alias grep="grep --color=auto"
 alias rm="rm -v"
 
 # Random stuff I sometimes use
-alias pfresh='mplayer http://livestream.freshfm.com.au:8004/'
+alias pfresh='mplayer http://live.fresh927.com.au:80/freshaac'
 alias tgit="http_proxy=socks5://127.0.0.1:9050 git"
 alias fuck='$(thefuck $(fc -ln -1))'
 alias loldongs="yes loldongs | lolcat"
-alias winbox='wine ~/Downloads/winbox.exe >/dev/null 2>&1 &!'
 
+if [ ! -z "$DISPLAY" ]; then
+    alias winbox='wine ~/Downloads/winbox.exe >/dev/null 2>&1 &!'
+fi
 # End setting up aliases
 
 # Set up useful environment variables
@@ -48,7 +50,6 @@ if [ "$TMUX" != "" ]; then
 else
 	export TERM=xterm-256color
 fi
-
 
 unset TMPDIR
 export LANG=en_US.UTF-8
@@ -69,14 +70,16 @@ if [ "$DISPLAY" != "" ]; then
 fi
 
 # SSH agent stuff
-if ! pgrep -u $USER ssh-agent > /dev/null; then
-    ssh-agent | grep -v echo > ~/.ssh-agent-thing
+if [ ! -z "$(which ssh-agent)" ] &&  [ ! -z "$(ls ~/.ssh/identities/ 2>/dev/null)" ]; then
+
+    if ! pgrep -u $USER ssh-agent > /dev/null; then
+        ssh-agent | grep -v echo > ~/.ssh-agent-thing
+    fi
+
+    if [[ "$SSH_AGENT_PID" == "" ]]; then
+        eval $(<~/.ssh-agent-thing)
+    fi
+
+    ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add ~/.ssh/identities/* && unalias ssh; ssh'
 fi
-
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval $(<~/.ssh-agent-thing)
-fi
-
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add ~/.ssh/identities/* && unalias ssh; ssh'
-
 # End SSH agent stuff
