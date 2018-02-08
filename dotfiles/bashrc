@@ -61,6 +61,10 @@ if [ -d "~/.gem/ruby" ]; then
     export PATH=$PATH:$RUBY_BIN
 fi
 
+if [ ! -z "$(which rbenv 2>/dev/null)" ]; then
+    eval "$(rbenv init -)"
+fi
+
 # Java path
 if [ -d "/usr/lib/jvm/default" ]; then
     export JAVA_HOME="/usr/lib/jvm/default"

@@ -7,6 +7,7 @@ ponyhosts=(
     alicorn  "%F{009}a%F{238}l%F{009}i%F{237}c%F{009}o%F{237}r%F{009}n"
     duskbutt "%F{238}duskbutt"
     ponies   "%F{039}ponies"
+    zephyr   "%F{034}zephyr"
     )
 
 hostname=${$(hostname)%%.*}
