@@ -1,0 +1,11 @@
+/.idea
+/target
+/*.iml
+/out
+/dependency-reduced-pom.xml
+/*/dependency-reduced-pom.xml
+/cmake-build-debug
+/peda-session-main.txt
+/.gdb_history
+/vgcore.*
+

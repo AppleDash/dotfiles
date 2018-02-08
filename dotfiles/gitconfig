@@ -1,11 +1,13 @@
 [user]
 	email = pet@feather.horse
 	name = AppleDash
+	signingkey = B661C3B56187E464837321A2C915AF9FE60A3421
 [push]
 	default = matching
 
 [core]
 	autocrlf = input
+	excludesfile = /home/appledash/.gitignore_global
 
 [alias]
 	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
