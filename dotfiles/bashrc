@@ -61,7 +61,7 @@ if [ -d "~/.gem/ruby" ]; then
     export PATH=$PATH:$RUBY_BIN
 fi
 
-if [ ! -z "$(which rbenv 2>/dev/null)" ]; then
+if [ "$(which rbenv 2>/dev/null)" != "rbenv not found" ]; then
     eval "$(rbenv init -)"
 fi
 

@@ -1,4 +1,4 @@
 #!/bin/zsh
 git pull
-git submodule update --recursive
+git submodule update --init --recursive
 
