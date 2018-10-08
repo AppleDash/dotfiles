@@ -56,7 +56,7 @@ unset TMPDIR
 export LANG=en_US.UTF-8
 
 # Ruby gem binaries
-if [ -d "~/.gem/ruby" ]; then
+if [ -d "$HOME/.gem/ruby" ]; then
     RUBY_BIN="$(find ~/.gem/ruby/ -maxdepth 1 -mindepth 1 -type d | head -n1 | tr -d '\n')"/bin
     export PATH=$PATH:$RUBY_BIN
 fi

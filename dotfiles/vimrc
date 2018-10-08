@@ -42,3 +42,5 @@ set backspace=indent,eol,start
 :inoremap <C-Z> <C-O>:u<CR> 
 :inoremap <C-Y> <C-R>
 au BufNewFile,BufRead *.html.j2 set filetype=html
+
+set shiftwidth=4
