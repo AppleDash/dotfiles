@@ -78,9 +78,9 @@ export VISUAL=vim
 # End setup of environment variables
 
 # I don't know why my mouse speed is set in my bashrc.
-if [ "$DISPLAY" != "" ]; then
-    xset m 1/16
-fi
+# if [ "$DISPLAY" != "" ]; then
+#     xset m 1/16
+# fi
 
 # SSH agent stuff
 if [ ! -z "$(which ssh-agent)" ] &&  [ ! -z "$(ls ~/.ssh/identities/ 2>/dev/null)" ]; then

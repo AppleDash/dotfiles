@@ -8,4 +8,6 @@
 /peda-session-main.txt
 /.gdb_history
 /vgcore.*
-
+/venv
+/*/target
+/*/*.iml
