@@ -1,6 +1,3 @@
-[submodule "external/tmux-powerline"]
-	path = external/tmux-powerline
-        url = https://github.com/AppleDash/tmux-powerline.git
 [submodule "dotfiles/vim/bundle/Vundle.vim"]
 	path = dotfiles/vim/bundle/Vundle.vim
         url = https://github.com/VundleVim/Vundle.vim.git
@@ -11,3 +8,6 @@
 [submodule "external/prezto"]
 	path = external/prezto
 	url = https://github.com/AppleDash/prezto.git
+[submodule "external/tmux-powerline"]
+	path = external/tmux-powerline
+	url = https://github.com/AppleDash/tmux-powerline.git
