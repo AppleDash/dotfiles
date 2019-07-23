@@ -45,7 +45,7 @@ alias weather="curl https://wttr.in"
 # Set up useful environment variables
 if [ "$TMUX" != "" ] || [ "$STY" != "" ]; then
     export TERM=screen-256color
-elif [[ "$TERM" != vt.* ]]; then # If something else has set our TERM to something like vt100, trust it.
+elif [[ "$TERM" != vt* ]]; then # If something else has set our TERM to something like vt100, trust it.
     export TERM=xterm-256color
 fi
 
