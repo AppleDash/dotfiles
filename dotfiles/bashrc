@@ -34,13 +34,16 @@ fi
 alias grep="grep --color=auto"
 alias rm="rm -v"
 
+alias emacs="emacs -nw -Q"
+
 # Random stuff I sometimes use
 alias pfresh='mplayer http://live.fresh927.com.au:80/freshaac'
 alias loldongs="yes loldongs | lolcat"
+alias weather="curl https://wttr.in"
 # End setting up aliases
 
 # Set up useful environment variables
-if [ "$TMUX" != "" ] || [ "$STY" != ""]; then
+if [ "$TMUX" != "" ] || [ "$STY" != "" ]; then
     export TERM=screen-256color
 elif [[ "$TERM" != vt.* ]]; then # If something else has set our TERM to something like vt100, trust it.
     export TERM=xterm-256color
