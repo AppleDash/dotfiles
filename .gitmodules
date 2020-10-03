@@ -5,6 +5,7 @@
 [submodule "dotfiles/vim/bundle/YouCompleteMe"]
 	path = dotfiles/vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+	branch = master
 [submodule "external/prezto"]
 	path = external/prezto
 	url = https://github.com/AppleDash/prezto.git
