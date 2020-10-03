@@ -9,5 +9,6 @@
 /.gdb_history
 /vgcore.*
 /venv
+__pycache__
 /*/target
 /*/*.iml

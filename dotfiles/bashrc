@@ -33,7 +33,7 @@ fi
 
 alias grep="grep --color=auto"
 alias rm="rm -v"
-
+alias legacy-ssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias emacs="emacs -nw -Q"
 
 # Random stuff I sometimes use
@@ -70,9 +70,12 @@ fi
 
 export PATH="$PATH:$HOME/bin/:/usr/lib/passenger/bin"
 export GOPATH="$HOME/projects/go"
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
 export EDITOR=vim
 export VISUAL=vim
+
+export LOLCOMMITS_DEVICE="/dev/video0"
 # End setup of environment variables
 
 # I don't know why my mouse speed is set in my bashrc.
