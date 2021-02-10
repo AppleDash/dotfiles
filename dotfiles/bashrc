@@ -32,7 +32,7 @@ else
 fi
 
 alias grep="grep --color=auto"
-alias rm="rm -v"
+alias rm="rm -v --one-file-system"
 alias legacy-ssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias emacs="emacs -nw -Q"
 
