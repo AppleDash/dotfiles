@@ -11,7 +11,11 @@ ponyhosts=(
     thunderlane "%F{242}thunderlane"
     )
 
-hostname=${$(hostname)%%.*}
+if [ -f /proc/sys/kernel/hostname ]; then
+    hostname=${$(cat /proc/sys/kernel/hostname)%%.*}
+else
+    hostname=${$(hostname)%%.*}
+fi
 namecolor=""
 if [[ "$USER" == "root" ]]; then
     namecolor="%F{009}"
