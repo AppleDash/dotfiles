@@ -22,3 +22,9 @@
 	rebase = true
 [init]
 	defaultBranch = master
+[branch]
+	autosetuprebase = always
+[merge]
+	tool = meld
+[diff]
+	renameLimit = 9999

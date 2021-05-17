@@ -44,3 +44,8 @@ set backspace=indent,eol,start
 au BufNewFile,BufRead *.html.j2 set filetype=html
 
 set shiftwidth=4
+
+" Disable mouse in terminal
+set mouse=
+set ttymouse=
+

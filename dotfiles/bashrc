@@ -36,6 +36,8 @@ alias rm="rm -v --one-file-system"
 alias legacy-ssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias legacy-scp="scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias emacs="emacs -nw -Q"
+alias mvn17="JAVA_HOME=/usr/lib/jvm/java-17-openjdk mvn"
+alias mvn11="JAVA_HOME=/usr/lib/jvm/java-11-openjdk mvn"
 
 # Random stuff I sometimes use
 alias pfresh='mplayer http://live.fresh927.com.au:80/freshaac'
@@ -80,7 +82,10 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 export EDITOR=vim
 export VISUAL=vim
 
-export LOLCOMMITS_DEVICE="/dev/video0"
+export LOLCOMMITS_DEVICE="/dev/video0:width=1280:height=720"
+export LOLCOMMITS_STEALTH=1
+#export LOLCOMMITS_DEVICE="/dev/video0"
+export LOLCOMMITS_FORK=1
 # End setup of environment variables
 
 # I don't know why my mouse speed is set in my bashrc.
