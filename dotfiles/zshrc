@@ -28,4 +28,5 @@ export SAVEHIST=999999999
 export HISTSIZE=$SAVEHIST
 #emulate sh
 # exec pwsh -NoLogo -NoExit
+bindkey -e # fix ctrl-r binding hopefully
 
