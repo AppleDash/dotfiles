@@ -11,11 +11,9 @@ ponyhosts=(
     moondancer  "%F{230}moondancer"
     )
 
-if [ -f /proc/sys/kernel/hostname ]; then
-    hostname=${$(cat /proc/sys/kernel/hostname)%%.*}
-else
-    hostname=${$(hostname)%%.*}
-fi
+
+hostname=${$(uname -n)%%.*}
+
 namecolor=""
 if [[ "$USER" == "root" ]]; then
     namecolor="%F{009}"

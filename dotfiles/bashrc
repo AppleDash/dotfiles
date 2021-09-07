@@ -38,7 +38,7 @@ alias legacy-scp="scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias emacs="emacs -nw -Q"
 alias mvn17="JAVA_HOME=/usr/lib/jvm/java-17-openjdk mvn"
 alias mvn11="JAVA_HOME=/usr/lib/jvm/java-11-openjdk mvn"
-
+alias yay="yay --answerclean=n --answerdiff=n --answeredit=n"
 # Random stuff I sometimes use
 alias pfresh='mplayer http://live.fresh927.com.au:80/freshaac'
 alias loldongs="yes loldongs | lolcat"
