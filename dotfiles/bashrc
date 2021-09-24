@@ -27,12 +27,13 @@ export MAKEFLAGS="-j$makejobs"
 # Set up useful aliases
 if [ "$uname" = "FreeBSD" ]; then
     alias ls="ls -G"
+    alias rm="rm -vxI" # verbose, one filesystem, confirm large removals
 else
     alias ls="ls --color=auto"
+    alias rm="rm -vI --one-file-system" # verbose, confirm large removals
 fi
 
 alias grep="grep --color=auto"
-alias rm="rm -v --one-file-system"
 alias legacy-ssh="ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias legacy-scp="scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc"
 alias emacs="emacs -nw -Q"
