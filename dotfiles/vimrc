@@ -10,7 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 
 " All of your Plugins must be added before the following line
@@ -29,8 +29,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax enable
-colorscheme monokai
-set background=dark
+if $TERM =~ ".*-256color"
+  colorscheme monokai
+  set background=dark
+endif
+
+"colorscheme monokai
+"set background=dark
 set whichwrap+=<,>,[,]
 set autoindent
 set softtabstop=4
