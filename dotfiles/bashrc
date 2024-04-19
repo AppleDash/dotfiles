@@ -6,7 +6,10 @@ uname="$(uname)"
 # Set up make flags
 
 if [ "$uname" = "FreeBSD" ]; then
+    # FIXME: Pretty sure this is wrong, maybe use the Darwin version?
     ncpus="$(sysctl -a | egrep -i 'hw.ncpu')"
+elif [ "$uname" = "Darwin" ]; then
+    ncpus="$(sysctl -n hw.ncpu)"
 else
     ncpus="$(nproc)"
 fi
